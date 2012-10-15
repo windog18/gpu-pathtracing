@@ -1,0 +1,3 @@
+Loading OBJ File: ../cow_heavy.obj
+Loaded 34824 faces, 20556 vertices from ../cow_heavy.obj
+Building GPU KD-Tree...

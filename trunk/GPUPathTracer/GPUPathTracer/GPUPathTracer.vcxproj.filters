@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="basic_math.cpp" />
+    <ClCompile Include="interactive_camera.cpp" />
+    <ClCompile Include="color.cpp" />
+    <ClCompile Include="display.cpp" />
+    <ClCompile Include="image.cpp" />
+    <ClCompile Include="material.cpp" />
+    <ClCompile Include="objcore\obj.cpp">
+      <Filter>objcore</Filter>
+    </ClCompile>
+    <ClCompile Include="objcore\objloader.cpp">
+      <Filter>objcore</Filter>
+    </ClCompile>
+    <ClCompile Include="path_tracer.cpp" />
+    <ClCompile Include="geometry\KDTree.cpp">
+      <Filter>geometry</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="basic_math.h" />
+    <ClInclude Include="camera.h" />
+    <ClInclude Include="color.h" />
+    <ClInclude Include="cuda_safe_call.h" />
+    <ClInclude Include="cutil_math.h" />
+    <ClInclude Include="image.h" />
+    <ClInclude Include="material.h" />
+    <ClInclude Include="medium.h" />
+    <ClInclude Include="path_tracer.h" />
+    <ClInclude Include="path_tracer_kernel.h" />
+    <ClInclude Include="sphere.h" />
+    <ClInclude Include="absorption_and_scattering_properties.h" />
+    <ClInclude Include="interactive_camera.h" />
+    <ClInclude Include="windows_include.h" />
+    <ClInclude Include="objcore\obj.h">
+      <Filter>objcore</Filter>
+    </ClInclude>
+    <ClInclude Include="objcore\objloader.h">
+      <Filter>objcore</Filter>
+    </ClInclude>
+    <ClInclude Include="poly.h" />
+    <ClInclude Include="geometry\KDTree.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\light.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\ray.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\triangle.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\utils.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\Vec3.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="path_tracer_kernel.cu" />
+    <CudaCompile Include="geometry\kdtree_kernel.cu">
+      <Filter>geometry</Filter>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="objcore">
+      <UniqueIdentifier>{2df9d538-c7c8-4657-bb67-d7cc725487cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cutil">
+      <UniqueIdentifier>{058db376-ef10-49e6-8e8e-d9de02943a69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="geometry">
+      <UniqueIdentifier>{d2642f03-d0ec-41b7-bffe-8f027232b116}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
