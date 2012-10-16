@@ -3,7 +3,8 @@
 
 #include <cuda_runtime.h>
 #include<vector>
-
+#include<string>
+#include "hdrloader.h"
 struct Image;
 struct Sphere;
 struct Ray;
@@ -22,8 +23,9 @@ private:
 	void deleteDeviceData();
 
 	void setUpScene();
-	void loadEnvironmentMap();
-	void FirstSetTexture(unsigned int pTexture,int &nCount);
+	void setEnvironmentMap(std::string filePath);
+	void loadSubImage(int fromX,int fromY,int toX,int toY,const HDRLoaderResult& data,Image *store);
+	void FirstSetTexture(unsigned int pTexture,int nCount);
 public:
 	PathTracer(Camera* cam);
 	~PathTracer();

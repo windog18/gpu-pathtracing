@@ -475,6 +475,99 @@ Color computeBackgroundColor(const float3 & direction) {
 	return interpolatedColor * radianceMultiplier;*/
 	if(direction.z > 0)
 		return make_float3(1,1,1);
+
+
+	int transFactor[6][2];
+	//posX
+	transFactor[0][0] = -1;transFactor[0][1] = -1;
+	//negX
+	transFactor[1][0] = 1 ;transFactor[1][1] = -1;
+	//posY
+	transFactor[2][0] = 1 ;transFactor[2][1] =  1;
+	//negY
+	transFactor[3][0] = 1 ;transFactor[3][1] =  -1;
+	//posZ
+	transFactor[4][0] = 1 ;transFactor[4][1] =  -1;
+	//negZ
+	transFactor[5][0] = -1 ;transFactor[5][1] =  -1;
+	float3 pixelColor;
+	float x = fabs(direction.x);
+	float y = fabs(direction.y);
+	float z = fabs(direction.z);
+	Image *curImage;
+	float texCoordX,texCoordY;
+	float3 tex;
+	//posX and negZ
+	if(x >= y && x >= z){
+		float xTanTheta = direction.z/x;
+		float xSeg = xTanTheta * 0.5;
+		float yTanTheta = direction.y/x;
+		float ySeg = yTanTheta * 0.5;
+		if(direction.x>0){
+			texCoordX =0.5 + transFactor[0][0] * xSeg;
+			texCoordY =0.5 + transFactor[0][1] * ySeg;
+			tex.x = 0;
+		}else{
+			texCoordX =0.5 + transFactor[1][0] * xSeg;
+			texCoordY =0.5 + transFactor[1][1] * ySeg;
+			tex.x = 1;
+		}
+		tex.y = texCoordX;
+		tex.z = texCoordY;
+
+//		printf("xSinTheta: %f ySinTheta: %f\n",xSinTheta,ySinTheta);
+	}
+	else if(y >= x && y >=z){//posY and negY
+		float xTanTheta = direction.x/y;
+		float xSeg = xTanTheta * 0.5;
+		float yTanTheta = direction.z/y;
+		float ySeg = yTanTheta * 0.5;
+		if(direction.y>0){
+			texCoordX =0.5 + transFactor[2][0] * xSeg;
+			texCoordY =0.5 + transFactor[2][1] * ySeg;
+			tex.x = 2;
+		}
+		else{
+			texCoordX =0.5 + transFactor[3][0] * xSeg;
+			texCoordY =0.5 + transFactor[3][1] * ySeg;
+			tex.x = 3;
+		}
+		tex.y = texCoordX;
+		tex.z = texCoordY;
+//		printf("xSinTheta: %f ySinTheta: %f\n",xSinTheta,ySinTheta);
+	}
+	else if(z >= x && z >=y){
+		float xTanTheta = direction.x/z;
+		float xSeg = xTanTheta * 0.5;
+		float yTanTheta = direction.y/z;
+		float ySeg = yTanTheta * 0.5;
+		if(direction.z>0){
+			texCoordX =0.5 + transFactor[4][0] * xSeg;
+			texCoordY =0.5 + transFactor[4][1] * ySeg;
+			tex.x = 4;
+		}
+		else{
+			texCoordX =0.5 + transFactor[5][0] * xSeg;
+			texCoordY =0.5 + transFactor[5][1] * ySeg;
+			tex.x = 5;
+		}
+		tex.y = texCoordX;
+		tex.z = texCoordY;
+//		printf("xSinTheta: %f ySinTheta: %f\n",xSinTheta,ySinTheta);
+	}
+	int t = tex.x;
+	if(t == 0)
+		return tex2D(tex1,tex.y,tex.z);
+	else if(t == 1)
+		return tex2D(tex2,tex.y,tex.z);
+	else if(t == 2)
+		return tex2D(tex3,tex.y,tex.z);
+	else if(t == 3)
+		return tex2D(tex4,tex.y,tex.z);
+	else if(t == 4)
+		return tex2D(tex5,tex.y,tex.z);
+	else if(t == 5)
+		return tex2D(tex6,tex.y,tex.z);
 }
 
 __host__ __device__

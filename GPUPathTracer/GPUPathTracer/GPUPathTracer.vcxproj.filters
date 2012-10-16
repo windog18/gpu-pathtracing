@@ -17,6 +17,7 @@
     <ClCompile Include="geometry\KDTree.cpp">
       <Filter>geometry</Filter>
     </ClCompile>
+    <ClCompile Include="hdrloader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="basic_math.h" />
@@ -58,6 +59,7 @@
     <ClInclude Include="geometry\Vec3.h">
       <Filter>geometry</Filter>
     </ClInclude>
+    <ClInclude Include="hdrloader.h" />
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="path_tracer_kernel.cu" />

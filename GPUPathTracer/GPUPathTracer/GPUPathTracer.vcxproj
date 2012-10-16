@@ -185,6 +185,7 @@ copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
     <ClInclude Include="geometry\triangle.h" />
     <ClInclude Include="geometry\utils.h" />
     <ClInclude Include="geometry\Vec3.h" />
+    <ClInclude Include="hdrloader.h" />
     <ClInclude Include="poly.h" />
     <ClInclude Include="image.h" />
     <ClInclude Include="material.h" />
@@ -203,6 +204,7 @@ copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
       <FileType>CppCode</FileType>
     </ClCompile>
     <ClCompile Include="geometry\KDTree.cpp" />
+    <ClCompile Include="hdrloader.cpp" />
     <ClCompile Include="interactive_camera.cpp" />
     <ClCompile Include="color.cpp" />
     <ClCompile Include="display.cpp" />
