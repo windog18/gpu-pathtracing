@@ -25,7 +25,7 @@
 
 #include "objcore/objloader.h"
 #include "geometry/triangle.h"
-//#include "cukd/primitives.h"
+#include "hdrloader.h"
 PathTracer::PathTracer(Camera* cam) {
 
 	renderCamera = cam;
@@ -128,7 +128,7 @@ Image* PathTracer::render() {
 }
 extern "C" void SetTexture(cudaArray *cuArray,int nCount);
 
-void PathTracer::FirstSetTexture(unsigned int  pTexture,int &nCount){
+void PathTracer::FirstSetTexture(unsigned int  pTexture,int nCount){
 		cudaGraphicsResource *cudaResource;
 		cudaGraphicsGLRegisterImage(&cudaResource,pTexture, GL_TEXTURE_2D,cudaGraphicsRegisterFlagsNone);
 		cudaError_t tmp=cudaGetLastError();
@@ -140,6 +140,62 @@ void PathTracer::FirstSetTexture(unsigned int  pTexture,int &nCount){
 		SetTexture(cuArray,nCount);
 		cudaGraphicsUnmapResources(1,&(cudaResource), 0);
 }
+
+void PathTracer::setEnvironmentMap(std::string filePath){
+	vector<Image *>cubeMap;
+	cubeMap.clear();
+
+	const char *ext = &filePath[filePath.size()-4];
+	assert(!strcmp(ext,".hdr"));
+	HDRLoaderResult result;
+	HDRLoader::load(filePath.c_str(),result);
+	int tSize = result.width < result.height ? result.width : result.height;
+	tSize /=3;
+	for(int i = 0 ;i< 6;i++){
+		cubeMap.push_back(newImage(tSize,tSize));
+		memset(cubeMap[i]->pixels,0,sizeof(float3)*tSize*tSize);
+	}
+	if(result.width<result.height){
+		loadSubImage(tSize ,tSize - 1,2 * tSize ,0  -1,result,cubeMap[2]);//posY
+		loadSubImage(tSize - 1,tSize,0 - 1,2 * tSize,result,cubeMap[1]);//negX
+		loadSubImage(2 * tSize - 1,tSize,tSize - 1,2 * tSize,result,cubeMap[5]);//negZ
+		loadSubImage(3*tSize - 1,tSize ,2*tSize - 1,2*tSize ,result,cubeMap[0]);//posX
+		loadSubImage(tSize , 3 * tSize - 1,2 * tSize , 2 * tSize - 1,result,cubeMap[3]);//negY;
+		loadSubImage(tSize , 4 * tSize - 1,2 * tSize , 3 * tSize - 1,result,cubeMap[4]);//posZ
+		// 	cubeMap[4]->SavePPM("posZ_hdr.ppm");
+		//  	cubeMap[5]->SavePPM("negZ_hdr.ppm");
+	}else
+		assert(false);
+
+////set texture to cuda
+	GLuint texs[6];
+	glGenTextures(6,texs);
+	for(int i = 0;i<6;i++){
+		glBindTexture(GL_TEXTURE_2D,texs[i]);
+		glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);    // (Modify This For The Type Of Filtering You Want)
+		glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR); // (Modify This For The Type Of Filtering You Want)
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, tSize, tSize, 0, GL_RGBA, GL_FLOAT, cubeMap[i]->pixels);  // (Modify This If You Want Mipmaps)
+		FirstSetTexture(texs[i],i+1);
+	}
+}
+void PathTracer::loadSubImage(int fromX,int fromY,int toX,int toY,const HDRLoaderResult& data,Image *store){
+	assert(fromX>=0&&fromX<data.width);
+	assert(fromY>=0&&fromY<data.height);
+	float3* image = store->pixels;
+	if(!image)
+		assert(false);
+	int increasX = (toX - fromX) > 0?  1 : -1;
+	int increasY = (toY - fromY) > 0?  1 : -1;
+
+	for(int y = fromY ; y!=toY ; y+=increasY){
+		for(int x = fromX; x!=toX ; x+=increasX){
+			image[(abs(y - fromY)*store->width + abs(x - fromX))*3].x = data.cols[(y*data.width + x)*3];
+			image[(abs(y - fromY)*store->width + abs(x - fromX))*3].y = data.cols[(y*data.width + x)*3 + 1];
+			image[(abs(y - fromY)*store->width + abs(x - fromX))*3].z = data.cols[(y*data.width + x)*3 + 2];
+		}
+	}
+}
+
 void PathTracer::setUpScene() {
 
 //	numSpheres = 14; // TODO: Move this!

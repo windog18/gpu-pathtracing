@@ -6,8 +6,23 @@
 
 // TODO: Make this a class!!! (It's no longer used in the .cu file!)
 
-struct Image {
-
+class Image {
+public:
+	Image(int width,int height){
+		pixels = new Color[width*height];
+		numPixels = width * height;
+		passCounter = 0;
+	}
+	Image(){
+		pixels=NULL;
+		numPixels=0;
+		width = 0;
+		height = 0;
+		passCounter = 0;
+	}
+	~Image(){
+		delete pixels;
+	}
 	Color* pixels;
 	int width;
 	int height;
