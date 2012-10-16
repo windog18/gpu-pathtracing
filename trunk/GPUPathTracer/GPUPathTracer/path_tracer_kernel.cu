@@ -58,16 +58,16 @@ namespace KD_TREE{
 #define SQRT_OF_ONE_THIRD     0.5773502691896257645091487805019574556476
 #define E                     2.7182818284590452353602874713526624977572
 
-texture<unsigned long, 2, cudaReadModeElementType> tex1;
-texture<unsigned long, 2, cudaReadModeElementType> tex2;
-texture<unsigned long, 2, cudaReadModeElementType> tex3;
-texture<unsigned long, 2, cudaReadModeElementType> tex4;
-texture<unsigned long, 2, cudaReadModeElementType> tex5;
-texture<unsigned long, 2, cudaReadModeElementType> tex6;
-texture<unsigned long, 2, cudaReadModeElementType> tex7;
-texture<unsigned long, 2, cudaReadModeElementType> tex8;
-texture<unsigned long, 2, cudaReadModeElementType> tex9;
-texture<unsigned long, 2, cudaReadModeElementType> tex10;
+texture<float4, 2, cudaReadModeElementType> tex1;
+texture<float4, 2, cudaReadModeElementType> tex2;
+texture<float4, 2, cudaReadModeElementType> tex3;
+texture<float4, 2, cudaReadModeElementType> tex4;
+texture<float4, 2, cudaReadModeElementType> tex5;
+texture<float4, 2, cudaReadModeElementType> tex6;
+texture<float4, 2, cudaReadModeElementType> tex7;
+texture<float4, 2, cudaReadModeElementType> tex8;
+texture<float4, 2, cudaReadModeElementType> tex9;
+texture<float4, 2, cudaReadModeElementType> tex10;
 
 extern "C" void SetTexture(cudaArray *cuArray,int nCount)
 {
@@ -111,7 +111,7 @@ extern "C" void SetTexture(cudaArray *cuArray,int nCount)
 	tex10.addressMode[1] = cudaAddressModeWrap; 
 	tex10.filterMode = cudaFilterModePoint; 
 	tex10.normalized =true;
-	cudaChannelFormatDesc chDesc=cudaCreateChannelDesc<unsigned long>();
+	cudaChannelFormatDesc chDesc=cudaCreateChannelDesc<float4>();
 /*	unsigned  int w=40,h=40,size=w*h*sizeof(unsigned long);
 	cudaArray *tcuArray;
 	unsigned long *temp=new unsigned long[w*h];
@@ -464,7 +464,7 @@ Fresnel computeFresnel(const float3 & normal, const float3 & incident, float ref
 
 }
 
-__host__ __device__
+__device__
 Color computeBackgroundColor(const float3 & direction) {
 /*	float position = (dot(direction, normalize(make_float3(-0.5, 0.5, -1.0))) + 1) / 2;
 	Color firstColor = make_float3(0.15, 0.3, 0.5); // Bluish.
@@ -473,8 +473,8 @@ Color computeBackgroundColor(const float3 & direction) {
 	float radianceMultiplier = 1.0;
 
 	return interpolatedColor * radianceMultiplier;*/
-	if(direction.z > 0)
-		return make_float3(1,1,1);
+	//if(direction.z > 0)
+	//	return make_float3(1,1,1);
 
 
 	int transFactor[6][2];
@@ -557,19 +557,18 @@ Color computeBackgroundColor(const float3 & direction) {
 	}
 	int t = tex.x;
 	if(t == 0)
-		return tex2D(tex1,tex.y,tex.z);
+		return make_float3(tex2D(tex1,tex.y,tex.z));
 	else if(t == 1)
-		return tex2D(tex2,tex.y,tex.z);
+		return make_float3(tex2D(tex2,tex.y,tex.z));
 	else if(t == 2)
-		return tex2D(tex3,tex.y,tex.z);
+		return make_float3(tex2D(tex3,tex.y,tex.z));
 	else if(t == 3)
-		return tex2D(tex4,tex.y,tex.z);
+		return make_float3(tex2D(tex4,tex.y,tex.z));
 	else if(t == 4)
-		return tex2D(tex5,tex.y,tex.z);
+		return make_float3(tex2D(tex5,tex.y,tex.z));
 	else if(t == 5)
-		return tex2D(tex6,tex.y,tex.z);
+		return make_float3(tex2D(tex6,tex.y,tex.z));
 }
-
 __host__ __device__
 Color computeTransmission(Color absorptionCoefficient, float distance) {
 	Color transmitted;
@@ -614,7 +613,7 @@ __global__ void traceRayKernel(Triangle *m_triangles,int numActivePixels, int* a
 	float3 normal;
 
 	// Check for ground plane intersection:
-	t = findGroundPlaneIntersection(HARD_CODED_GROUND_ELEVATION, currentRay, normal); 
+/*	t = findGroundPlaneIntersection(HARD_CODED_GROUND_ELEVATION, currentRay, normal); 
 	if (t > 0) { // No "<" conditional only because this is being tested before anything else.
 		bestT = t;
 		bestNormal = normal;
@@ -622,7 +621,7 @@ __global__ void traceRayKernel(Triangle *m_triangles,int numActivePixels, int* a
 		bestIsGroundPlane = true;
 		bestIsSphere = false;
 		bestIsPoly = false;
-	}
+	}*/
 
 		float pt;
 		float ob1;
@@ -722,12 +721,12 @@ __global__ void traceRayKernel(Triangle *m_triangles,int numActivePixels, int* a
 		} else if(bestIsPoly){
 			Material marble;
 			SET_DEFAULT_MATERIAL_PROPERTIES(marble);
-			marble.specularColor = make_float3(0.83, 0.79, 0.75);
+			marble.specularColor = make_float3(0.81, 0.81, 0.69);
 			marble.hasTransmission = true;
-			marble.diffuseColor = make_float3(0.83, 0.79, 0.75);
-			marble.medium.refractiveIndex = 1.5;
-			marble.medium.absorptionAndScatteringProperties.absorptionCoefficient = make_float3(0.0021 ,0.0041 ,0.0071)*5;
-			marble.medium.absorptionAndScatteringProperties.reducedScatteringCoefficient = 3.00 *5;
+			marble.diffuseColor = make_float3(0.81, 0.81, 0.69);
+			marble.medium.refractiveIndex = 1.3;
+			marble.medium.absorptionAndScatteringProperties.absorptionCoefficient = make_float3(0.0014 ,0.0025 ,0.0142)*10;
+			marble.medium.absorptionAndScatteringProperties.reducedScatteringCoefficient = 1.90 *10;
 			marble.medium.absorptionAndScatteringProperties.g = 0.01;
 			bestMaterial = marble;
 		//	bestMaterial = polys[bestPolyIndex].material;
