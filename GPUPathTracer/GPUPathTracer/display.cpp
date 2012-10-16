@@ -93,7 +93,6 @@ void initializeThings( int argc, char** argv) {
 
 	interactiveCamera->buildRenderCamera(renderCamera);
 
-	pathTracer = new PathTracer(renderCamera);
 
     // Init random number generator
 	srand((unsigned)time(0));
@@ -108,7 +107,7 @@ void initializeThings( int argc, char** argv) {
     if( false == initGL()) {
         return;
     }
-
+	pathTracer = new PathTracer(renderCamera);
     // register callbacks
     glutDisplayFunc( display);
     glutKeyboardFunc( keyboard);
@@ -168,9 +167,12 @@ bool initGL() {
 	// Enable textures:
 	glEnable(GL_TEXTURE_2D);
 
-
+	
     //CUT_CHECK_ERROR_GL(); // ???
 
+	cudaError_t error =  cudaGLSetGLDevice(0);
+
+	printf("%s\n",cudaGetErrorString(error));
     return true;
 }
 

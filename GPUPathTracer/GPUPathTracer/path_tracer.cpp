@@ -1,3 +1,5 @@
+#include "gl/glew.h"
+
 #include "path_tracer.h"
 
 #include "image.h"
@@ -26,6 +28,7 @@
 #include "objcore/objloader.h"
 #include "geometry/triangle.h"
 #include "hdrloader.h"
+
 PathTracer::PathTracer(Camera* cam) {
 
 	renderCamera = cam;
@@ -33,7 +36,6 @@ PathTracer::PathTracer(Camera* cam) {
 	image = newImage(renderCamera->resolution.x, renderCamera->resolution.y);
 
 	numPolys = 0;
-
 	prepMesh();
 
 	setUpScene();
@@ -53,7 +55,7 @@ PathTracer::~PathTracer() {
 
 void::PathTracer::prepMesh(){
 	obj* m = new obj();
-	objLoader meshload("../box.obj", m);
+	objLoader meshload("../bunny.obj", m);
 
 /*	polys = new Poly[m->getFaces()->size()];
 
@@ -131,10 +133,10 @@ extern "C" void SetTexture(cudaArray *cuArray,int nCount);
 void PathTracer::FirstSetTexture(unsigned int  pTexture,int nCount){
 		cudaGraphicsResource *cudaResource;
 		cudaGraphicsGLRegisterImage(&cudaResource,pTexture, GL_TEXTURE_2D,cudaGraphicsRegisterFlagsNone);
-		cudaError_t tmp=cudaGetLastError();
-		cudaGraphicsMapResources(1,&(cudaResource), 0);
+		cudaError_t tmp=cudaGetLastError();		
 		if(tmp!=cudaSuccess)
 			printf("%s\n",cudaGetErrorString(tmp));
+		cudaGraphicsMapResources(1,&(cudaResource), 0);
 		cudaArray *cuArray;
 		cutilSafeCall(cudaGraphicsSubResourceGetMappedArray( &cuArray,cudaResource, 0, 0));
 		SetTexture(cuArray,nCount);
@@ -174,7 +176,7 @@ void PathTracer::setEnvironmentMap(std::string filePath){
 		glBindTexture(GL_TEXTURE_2D,texs[i]);
 		glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);    // (Modify This For The Type Of Filtering You Want)
 		glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR); // (Modify This For The Type Of Filtering You Want)
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, tSize, tSize, 0, GL_RGBA, GL_FLOAT, cubeMap[i]->pixels);  // (Modify This If You Want Mipmaps)
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA32F_ARB, tSize, tSize, 0, GL_RGB, GL_FLOAT, cubeMap[i]->pixels);  // (Modify This If You Want Mipmaps)
 		FirstSetTexture(texs[i],i+1);
 	}
 }
@@ -189,15 +191,15 @@ void PathTracer::loadSubImage(int fromX,int fromY,int toX,int toY,const HDRLoade
 
 	for(int y = fromY ; y!=toY ; y+=increasY){
 		for(int x = fromX; x!=toX ; x+=increasX){
-			image[(abs(y - fromY)*store->width + abs(x - fromX))*3].x = data.cols[(y*data.width + x)*3];
-			image[(abs(y - fromY)*store->width + abs(x - fromX))*3].y = data.cols[(y*data.width + x)*3 + 1];
-			image[(abs(y - fromY)*store->width + abs(x - fromX))*3].z = data.cols[(y*data.width + x)*3 + 2];
+			image[(abs(y - fromY)*store->width + abs(x - fromX))].x = data.cols[(y*data.width + x)*3];
+			image[(abs(y - fromY)*store->width + abs(x - fromX))].y = data.cols[(y*data.width + x)*3 + 1];
+			image[(abs(y - fromY)*store->width + abs(x - fromX))].z = data.cols[(y*data.width + x)*3 + 2];
 		}
 	}
 }
 
 void PathTracer::setUpScene() {
-
+	setEnvironmentMap("../uffizi_cross.hdr");
 //	numSpheres = 14; // TODO: Move this!
 
 }
