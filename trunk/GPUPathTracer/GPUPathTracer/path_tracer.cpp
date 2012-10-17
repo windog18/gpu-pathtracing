@@ -54,7 +54,7 @@ PathTracer::~PathTracer() {
 }
 
 void::PathTracer::prepMesh(){
-	obj* m = new obj();
+	obj *m = new obj();
 	objLoader meshload("../bunny.obj", m);
 
 /*	polys = new Poly[m->getFaces()->size()];
@@ -75,6 +75,7 @@ void::PathTracer::prepMesh(){
 	std::vector<Triangle> tris;
 	for(int i=0; i<numPolys; i++){
 		Triangle tri;
+		tri.index = m->getMaterialIdx()[i];
 		for(int j = 0; j < 3; ++j) {
 			glm::vec4 p = m->getPoints()->operator[](m->getFaces()->operator[](i)[j]);
 			glm::vec4 n = m->getNormals()->operator[](m->getFaceNormals()->operator[](i)[j]);
@@ -104,7 +105,10 @@ void::PathTracer::prepMesh(){
 		tris.push_back(tri);
 	}
 	constructKDTree(tris, m->getMin()[0], m->getMin()[1],  m->getMin()[2],  m->getMax()[0],  m->getMax()[1],  m->getMax()[2]);
-	
+
+
+	cudaMalloc((void **)&device_materialList,sizeof(Material)*m->getMaterialList().size());
+	cudaMemcpy(device_materialList,&(m->getMaterialList()[0]),sizeof(Material) * m->getMaterialList().size(),cudaMemcpyHostToDevice);
 }
 
 void PathTracer::reset() {
@@ -116,7 +120,7 @@ void PathTracer::reset() {
 Image* PathTracer::render() {
 	Image* singlePassImage = newImage(image->width, image->height);
 
-	launchKernel(singlePassImage->numPixels, singlePassImage->pixels, image->passCounter, *renderCamera); // Dereference not ideal.
+	launchKernel(singlePassImage->numPixels ,device_materialList ,singlePassImage->pixels , image->passCounter, *renderCamera); // Dereference not ideal.
 
 	// TODO: Make a function for this (or a method---maybe Image can just be a class).
 	for (int i = 0; i < image->numPixels; i++) {

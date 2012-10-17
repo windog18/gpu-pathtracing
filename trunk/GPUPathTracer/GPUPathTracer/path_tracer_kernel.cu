@@ -578,7 +578,7 @@ Color computeTransmission(Color absorptionCoefficient, float distance) {
 	return transmitted;
 }
 
-__global__ void traceRayKernel(Triangle *m_triangles,int numActivePixels, int* activePixels, Ray *rays,
+__global__ void traceRayKernel(Triangle *m_triangles,Material *device_materialList,int numActivePixels, int* activePixels, Ray *rays,
 	                           int *isectID,float *alpha,int rayDepth, AbsorptionAndScatteringProperties* absorptionAndScattering, 
 							   float3* notAbsorbedColors, float3* accumulatedColors, unsigned long seedOrPass) {
 
@@ -862,7 +862,7 @@ void constructKDTree(std::vector<Triangle> &tris, float minx, float miny, float 
 
 
 extern "C"
-void launchKernel(int numPixels, Color* pixels, int counter, Camera renderCamera) {
+void launchKernel(int numPixels, Color* pixels,Material *device_materialList,int counter, Camera renderCamera) {
 	
 
 
@@ -914,7 +914,7 @@ void launchKernel(int numPixels, Color* pixels, int counter, Camera renderCamera
 		int newBlocksPerGrid = (numActivePixels + threadsPerBlock - 1) / threadsPerBlock; // Duplicate code.
 		KD_TREE::active_ray_bunch_traverse(kdtree->TreeNode_device,kdtree->TriangleIndexUseForCuda_device,
 			                               kdtree->treeTriangle_device,rays,activePixels,hits,alpha,x1,x2);
-		 traceRayKernel<<<newBlocksPerGrid, threadsPerBlock>>>(kdtree->treeTriangle_device, numActivePixels, activePixels.pointer(), 
+		 traceRayKernel<<<newBlocksPerGrid, threadsPerBlock>>>(kdtree->treeTriangle_device, device_materialList, numActivePixels, activePixels.pointer(), 
 			 rays.pointer(), hits.pointer(), alpha.pointer(), rayDepth, absorptionAndScattering, notAbsorbedColors, accumulatedColors, counter);
 		 cudaThreadSynchronize();
 

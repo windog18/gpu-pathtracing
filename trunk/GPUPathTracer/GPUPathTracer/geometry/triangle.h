@@ -102,7 +102,7 @@ public:
 	Vec3 n1,n2,n3;
 	bool HasTexture;
 	Vec3 BL,BH;//包围盒最小点、最大点
-	int index;//三角形索引
+	int index;//materialIndex
 	int textureIndex;
 private:
 	void calAABBox(Vec3 _v){

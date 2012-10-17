@@ -5,7 +5,7 @@
 #include <vector>
 // Necessary forward declaration:
 extern "C"
-	void launchKernel(int numPixels, Color* pixels, int counter, Camera renderCamera);
+	void launchKernel(int numPixels,Material *device_materialList, Color* pixels, int counter, Camera renderCamera);
 
 extern "C"
 void constructKDTree(std::vector<Triangle> &triarr, float minx, float miny, float minz, float maxx, float maxy, float maxz);

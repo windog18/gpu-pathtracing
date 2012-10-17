@@ -4,9 +4,8 @@
 #include <cuda_runtime.h>
 #include "color.h"
 #include "medium.h"
-
 struct Material {
-
+	int ID;
 	Color diffuseColor;
 	Color emittedColor;
 	Color specularColor;

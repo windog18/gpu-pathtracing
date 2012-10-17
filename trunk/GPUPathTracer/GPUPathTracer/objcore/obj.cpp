@@ -8,7 +8,9 @@
 #include "obj.h"
 #include <iostream>
 #include <limits>
-
+#include <string.h>
+#include <fstream>
+#include <map>
 #define EPSILON std::numeric_limits<double>::epsilon()
 
 using namespace std;
@@ -23,7 +25,8 @@ obj::obj(){
 	boundingbox = new float[32];
 	maxminSet = false;
 	xmax=0; xmin=0; ymax=0; ymin=0; zmax=0; zmin=0; 
-	
+	materialList.clear();
+	materialNameToID.clear();
 }
 
 obj::~obj(){
@@ -184,8 +187,9 @@ void obj::addPoint(glm::vec3 point){
 	compareMaxMin(point[0], point[1], point[2]);
 }
 
-void obj::addFace(vector<int> face){
+void obj::addFace(vector<int> face,int  materialIdx = 0){
     faces.push_back(face);
+	materialIndex.push_back(materialIdx);
     float facexmax = points[face[0]][0]; float faceymax = points[face[0]][1]; float facezmax = points[face[0]][2]; 
     float facexmin = points[face[0]][0]; float faceymin = points[face[0]][1]; float facezmin = points[face[0]][2]; 
     for(int i=0; i<face.size(); i++){
@@ -344,5 +348,54 @@ int obj::getIBOsize(){
 
 int obj::getCBOsize(){
 	return cbosize;
+}
+
+vector<int> obj::getMaterialIdx(){
+	return materialIndex;
+}
+
+void obj::loadMaterial(std::string materialFile){
+	materialList.clear();
+		ifstream fin;
+	fin.open(materialFile.c_str());
+
+	if(!fin) return ;
+	string header;
+	int index = 1;
+	while(fin>>header){
+		if(header=="newmtl"){
+			Material newMaterial;
+			string tempBuffer;
+			fin>>tempBuffer;
+			if(materialNameToID[tempBuffer]==0){
+				materialNameToID[tempBuffer] = index++;
+			}
+			newMaterial.ID = materialNameToID[tempBuffer];
+			while(fin>>tempBuffer&&tempBuffer!="endmtl"){
+				if(tempBuffer=="Ka"){
+				//	fin>>newMaterial.Ka[0]>>newMaterial.Ka[1]>>newMaterial.Ka[2];
+				}
+				else if(tempBuffer=="Kd"){
+					fin>>newMaterial.diffuseColor.x>>newMaterial.diffuseColor.y>>newMaterial.diffuseColor.z;
+				}
+				else if(tempBuffer == "Ks"){
+					fin>>newMaterial.specularColor.x>>newMaterial.specularColor.y>>newMaterial.specularColor.z;
+				}else if(tempBuffer == "translucent"){
+					newMaterial.hasTransmission = true;
+				}else if(tempBuffer == "newmtl"){
+					for(int i = tempBuffer.size() - 1 ;i >= 0;i--){
+						fin.putback(tempBuffer[i]);
+					}
+					break;
+				}
+				
+			}
+			materialList.push_back(newMaterial);
+	/*		cout<<"header: "<<newMaterial.materialName<<endl;
+			cout<<newMaterial.materialType<<endl;
+			cout<<newMaterial.DR.x<<" "<<newMaterial.DR.y<<" "<<newMaterial.DR.z<<endl;*/
+
+		}
+	}
 }
 

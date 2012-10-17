@@ -4,17 +4,20 @@
 #include <cuda_runtime.h>
 #include<vector>
 #include<string>
+#include "material.h"
 #include "hdrloader.h"
 struct Image;
 struct Sphere;
 struct Ray;
 struct Camera;
 struct Poly;
+class obj;
 class PathTracer {
 
 private:
 
 	Image* image;
+	Material *device_materialList;
 
 	int numSpheres;
 	int numPolys;
