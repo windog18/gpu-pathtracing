@@ -1,0 +1,8 @@
+newmtl _bunnywire_177028149
+translucent
+profile reflectance_green.dat transmittance_green.dat
+#Kd 0.0094 0.2217 0.1724
+Kd 0.4194 0.8217 0.4724
+Ks 0.1194 0.2217 0.1724
+Ns 100
+

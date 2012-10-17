@@ -23,6 +23,7 @@ objLoader::objLoader(string filename, obj* newMesh){
 	ifstream fp_in;
 	char * fname = (char*)filename.c_str();
 	fp_in.open(fname);
+	int materialID = 0;
 	if(fp_in.is_open()){
         while (fp_in.good() ){
 			string line;
@@ -31,7 +32,21 @@ objLoader::objLoader(string filename, obj* newMesh){
                 line="42";
             }
 			istringstream liness(line);
-			if(line[0]=='v' && line[1]=='t'){
+			if(line.substr(0,6)=="mtllib"){
+				stringstream strStream;
+				strStream<<line;
+				string temp,fileName;
+				strStream>>temp>>fileName;
+				geomesh->loadMaterial(fileName);
+			}else if(line.substr(0,6)=="usemtl"){
+				stringstream strStream;
+				strStream<<line;
+				string temp,fileName;
+				strStream>>temp>>fileName;
+				if(geomesh->materialNameToID[fileName]!=0){
+				  materialID = geomesh->materialNameToID[fileName];
+				}
+			}else if(line[0]=='v' && line[1]=='t'){
 				string v;
 				string x;
 				string y;
@@ -90,7 +105,7 @@ objLoader::objLoader(string filename, obj* newMesh){
 						normalList.push_back(::atof(f.c_str())-1);
 
 					}
-					geomesh->addFace(pointList);
+					geomesh->addFace(pointList,materialID);
 					geomesh->addFaceNormal(normalList);
 				}else if(std::string::npos != line.find("/")){
 					vector<int> pointList;
@@ -111,7 +126,7 @@ objLoader::objLoader(string filename, obj* newMesh){
 							i++;
 						}
 					}
-					geomesh->addFace(pointList);
+					geomesh->addFace(pointList,materialID);
 					geomesh->addFaceNormal(normalList);
 					geomesh->addFaceTexture(texturecoordList);
 				}else{
@@ -120,7 +135,7 @@ objLoader::objLoader(string filename, obj* newMesh){
 					while(getline(liness, v, ' ')){
 						pointList.push_back(::atof(v.c_str())-1);
 					}
-					geomesh->addFace(pointList);
+					geomesh->addFace(pointList,materialID);
 					//std::cout << "Vertex Format" << std::endl;
 				}
 			}
