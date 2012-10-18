@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // OBJCORE: A Simple Obj Library
 // by Yining Karl Li
-//
+// Modified by Yulong Shi
 // objloader.cpp
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -145,6 +145,9 @@ objLoader::objLoader(string filename, obj* newMesh){
 					//std::cout << "Vertex Format" << std::endl;
 				}
 			}
+		}
+		if(geomesh->getFaceNormals()->size()==0){
+			cout << "normal not find,will count it automatically"<<endl;
 		}
 		cout << "Loaded " << geomesh->getFaces()->size() << " faces, " << geomesh->getPoints()->size() << " vertices from " << filename << endl;
 	}else{
