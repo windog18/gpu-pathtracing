@@ -35,9 +35,15 @@ objLoader::objLoader(string filename, obj* newMesh){
 			if(line.substr(0,6)=="mtllib"){
 				stringstream strStream;
 				strStream<<line;
-				string temp,fileName;
-				strStream>>temp>>fileName;
-				geomesh->loadMaterial(fileName);
+				string temp,materialName;
+				strStream>>temp>>materialName;
+				int pos = filename.find_last_of('\\');
+				if(pos == -1)
+					pos = filename.find_last_of('/');
+				if(pos == -1)
+					pos = 0;
+				materialName = filename.substr(0,pos+1)+materialName;
+				geomesh->loadMaterial(materialName);
 			}else if(line.substr(0,6)=="usemtl"){
 				stringstream strStream;
 				strStream<<line;

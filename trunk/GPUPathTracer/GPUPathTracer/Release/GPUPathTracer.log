@@ -1,0 +1,78 @@
+﻿Build started 10/18/2012 4:00:26 PM.
+     1>Project "C:\project\gpu-pathtracing\GPUPathTracer\GPUPathTracer\GPUPathTracer.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\GPUPathTracer.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       AddCudaCompileDeps:
+       Skipping target "AddCudaCompileDeps" because all output files are up-to-date with respect to the input files.
+       AddCudaCompileDeps:
+       Skipping target "AddCudaCompileDeps" because all output files are up-to-date with respect to the input files.
+       AddCudaCompilePropsDeps:
+       Skipping target "AddCudaCompilePropsDeps" because all output files are up-to-date with respect to the input files.
+       AddCudaCompilePropsDeps:
+       Skipping target "AddCudaCompilePropsDeps" because all output files are up-to-date with respect to the input files.
+       CudaBuild:
+       Skipping target "CudaBuild" because all output files are up-to-date with respect to the input files.
+       CudaBuild:
+       Skipping target "CudaBuild" because all output files are up-to-date with respect to the input files.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../glm /I../freeglut/include /I../glew/include /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" /I"C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\share\inc" /I"C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc" /Zi /nologo /W3 /WX- /Od /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt objcore\obj.cpp
+         obj.cpp
+     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\./core/func_common.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_common.inl : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\./core/func_integer.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\../material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\../material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\../material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>objcore\obj.cpp(39): warning C4018: '<' : signed/unsigned mismatch
+     1>objcore\obj.cpp(69): warning C4018: '<' : signed/unsigned mismatch
+     1>objcore\obj.cpp(77): warning C4018: '<' : signed/unsigned mismatch
+     1>objcore\obj.cpp(112): warning C4018: '<' : signed/unsigned mismatch
+     1>objcore\obj.cpp(115): warning C4018: '<' : signed/unsigned mismatch
+     1>objcore\obj.cpp(118): warning C4018: '<' : signed/unsigned mismatch
+     1>objcore\obj.cpp(159): warning C4018: '<' : signed/unsigned mismatch
+     1>objcore\obj.cpp(196): warning C4018: '<' : signed/unsigned mismatch
+     1>objcore\obj.cpp(246): warning C4018: '<' : signed/unsigned mismatch
+     1>objcore\obj.cpp(253): warning C4018: '<' : signed/unsigned mismatch
+     1>objcore\obj.cpp(260): warning C4018: '<' : signed/unsigned mismatch
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\project\gpu-pathtracing\GPUPathTracer\Release\GPUPathTracer.exe" /INCREMENTAL /NOLOGO /LIBPATH:../freeglut/lib /LIBPATH:../glew/lib /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\lib\Win32" /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\lib\Win32" freeglut.lib glew32.lib cudart.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\GPUPathTracer.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\project\gpu-pathtracing\GPUPathTracer\Release\GPUPathTracer.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\project\gpu-pathtracing\GPUPathTracer\Release\GPUPathTracer.lib" /MACHINE:X86 Release\kdtree_kernel.cu.obj
+         Release\path_tracer_kernel.cu.obj
+         Release\GPUPathTracer.exe.embed.manifest.res
+         Release\basic_math.obj
+         Release\KDTree.obj
+         Release\hdrloader.obj
+         Release\interactive_camera.obj
+         Release\color.obj
+         Release\display.obj
+         Release\image.obj
+         Release\material.obj
+         Release\obj.obj
+         Release\objloader.obj
+         Release\path_tracer.obj
+     1>LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
+         Generating code
+         Finished generating code
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Release\GPUPathTracer.exe.embed.manifest" /manifest Release\GPUPathTracer.exe.intermediate.manifest
+         All outputs are up-to-date.
+       LinkEmbedManifest:
+         All outputs are up-to-date.
+         GPUPathTracer.vcxproj -> C:\project\gpu-pathtracing\GPUPathTracer\Release\GPUPathTracer.exe
+       PostBuildEvent:
+         echo copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\bin\cudart*.dll" "C:\project\gpu-pathtracing\GPUPathTracer\Release\"
+         copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\bin\cudart*.dll" "C:\project\gpu-pathtracing\GPUPathTracer\Release\"
+         :VCEnd
+         copy "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\bin\cudart*.dll" "C:\project\gpu-pathtracing\GPUPathTracer\Release\"
+         C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\bin\cudart32_42_9.dll
+         C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\bin\cudart64_42_9.dll
+                 2 file(s) copied.
+       FinalizeBuildStatus:
+         Deleting file "Release\GPUPathTracer.unsuccessfulbuild".
+         Touching "Release\GPUPathTracer.lastbuildstate".
+     1>Done Building Project "C:\project\gpu-pathtracing\GPUPathTracer\GPUPathTracer\GPUPathTracer.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.01
