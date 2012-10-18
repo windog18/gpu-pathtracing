@@ -148,6 +148,23 @@ objLoader::objLoader(string filename, obj* newMesh){
 		}
 		if(geomesh->getFaceNormals()->size()==0){
 			cout << "normal not find,will count it automatically"<<endl;
+			vector<vector<int>> *faces = geomesh->getFaces();
+			vector<glm::vec4> *points = geomesh->getPoints();
+			vector<int> normals;
+			for(int i = 0;i<faces->size();i++){
+				const vector<int> *face = &(*faces)[i];
+				for(int j = 0;j<face->size();j++){
+					glm::vec4 v1 = (*points)[(*face)[j]] - (*points)[(*face)[(j - 1 + face->size())%face->size()]];
+					glm::vec4 v2 = (*points)[(*face)[j]] - (*points)[(*face)[(j + 1)%face->size()]];
+					v1 = glm::normalize(v1);
+					v2 = glm::normalize(v2);
+					glm::vec3 n = glm::cross(glm::vec3(v2),glm::vec3(v1));
+					geomesh->addNormal(n);
+					normals.push_back(geomesh->getNormals()->size()-1);
+				}
+				geomesh->addFaceNormal(normals);
+			}
+			cout << "count normal finished..."<<endl;
 		}
 		cout << "Loaded " << geomesh->getFaces()->size() << " faces, " << geomesh->getPoints()->size() << " vertices from " << filename << endl;
 	}else{

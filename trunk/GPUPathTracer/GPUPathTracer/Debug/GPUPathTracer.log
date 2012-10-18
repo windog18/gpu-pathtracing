@@ -1,11 +1,13 @@
-﻿Build started 10/18/2012 2:10:59 PM.
-     1>Project "C:\project\gpu-pathtracing\GPUPathTracer\GPUPathTracer\GPUPathTracer.vcxproj" on node 2 (build target(s)).
-     1>InitializeBuildStatus:
+﻿Build started 2012/10/18 21:22:00.
+     1>Project "D:\Projection\gpu-pathtracing\GPUPathTracer\GPUPathTracer\GPUPathTracer.vcxproj" on node 2 (build target(s)).
+     1>PrepareForBuild:
+         Creating directory "D:\Projection\gpu-pathtracing\GPUPathTracer\Debug\".
+       InitializeBuildStatus:
          Touching "Debug\GPUPathTracer.unsuccessfulbuild".
        AddCudaCompileDeps:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /I../glm /I../freeglut/include /I../glew/include /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" /I"C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\share\inc" /I"C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" /I. /FIcuda_runtime.h /c C:\project\gpu-pathtracing\GPUPathTracer\GPUPathTracer\geometry\kdtree_kernel.cu 
+         D:\Program Files\Microsoft Visual Studio 10.0\VC\bin\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /I../glm /I../freeglut/include /I../glew/include /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" /I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\share\inc" /I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" /I. /FIcuda_runtime.h /c D:\Projection\gpu-pathtracing\GPUPathTracer\GPUPathTracer\geometry\kdtree_kernel.cu 
        AddCudaCompileDeps:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /I../glm /I../freeglut/include /I../glew/include /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" /I"C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\share\inc" /I"C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" /I. /FIcuda_runtime.h /c C:\project\gpu-pathtracing\GPUPathTracer\GPUPathTracer\path_tracer_kernel.cu 
+         D:\Program Files\Microsoft Visual Studio 10.0\VC\bin\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /I../glm /I../freeglut/include /I../glew/include /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" /I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\share\inc" /I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" /I. /FIcuda_runtime.h /c D:\Projection\gpu-pathtracing\GPUPathTracer\GPUPathTracer\path_tracer_kernel.cu 
        AddCudaCompilePropsDeps:
          Found "CudaToolkitCustomDir".
          Found "AdditionalDeps".
@@ -64,183 +66,227 @@
          Found "CommandLineTemplate".
        CudaBuild:
          Compiling CUDA source file geometry\kdtree_kernel.cu...
-         cmd.exe /C "C:\Users\stone\AppData\Local\Temp\a22015fbbeb84aa5874c3d2d6ce39f50.cmd"
-         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2010 -ccbin "c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin" -I"../glm" -I"../freeglut/include" -I"../glew/include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" -I"C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\share\inc" -I"C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include"  -G  --keep-dir "Debug" -maxrregcount=0  --machine 32 --compile  -g    -Xcompiler "/EHsc /nologo /Od /Zi /RTC1 /MDd  " -o "Debug\kdtree_kernel.cu.obj" "C:\project\gpu-pathtracing\GPUPathTracer\GPUPathTracer\geometry\kdtree_kernel.cu"
+         cmd.exe /C "C:\Users\SYL\AppData\Local\Temp\381d8febdb714efea4469c2e3ea1fb30.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2010 -ccbin "D:\Program Files\Microsoft Visual Studio 10.0\VC\bin" -I"../glm" -I"../freeglut/include" -I"../glew/include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" -I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\share\inc" -I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include"  -G  --keep-dir "Debug" -maxrregcount=0  --machine 32 --compile  -g    -Xcompiler "/EHsc /nologo /Od /Zi /RTC1 /MDd  " -o "Debug\kdtree_kernel.cu.obj" "D:\Projection\gpu-pathtracing\GPUPathTracer\GPUPathTracer\geometry\kdtree_kernel.cu"
          
-         C:\project\gpu-pathtracing\GPUPathTracer\GPUPathTracer>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2010 -ccbin "c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin" -I"../glm" -I"../freeglut/include" -I"../glew/include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" -I"C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\share\inc" -I"C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include"  -G  --keep-dir "Debug" -maxrregcount=0  --machine 32 --compile  -g    -Xcompiler "/EHsc /nologo /Od /Zi /RTC1 /MDd  " -o "Debug\kdtree_kernel.cu.obj" "C:\project\gpu-pathtracing\GPUPathTracer\GPUPathTracer\geometry\kdtree_kernel.cu" 
+         D:\Projection\gpu-pathtracing\GPUPathTracer\GPUPathTracer>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2010 -ccbin "D:\Program Files\Microsoft Visual Studio 10.0\VC\bin" -I"../glm" -I"../freeglut/include" -I"../glew/include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" -I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\share\inc" -I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include"  -G  --keep-dir "Debug" -maxrregcount=0  --machine 32 --compile  -g    -Xcompiler "/EHsc /nologo /Od /Zi /RTC1 /MDd  " -o "Debug\kdtree_kernel.cu.obj" "D:\Projection\gpu-pathtracing\GPUPathTracer\GPUPathTracer\geometry\kdtree_kernel.cu" 
          kdtree_kernel.cu
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\utils.h(439): warning : default argument is not allowed
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\utils.h(439): warning : default argument is not allowed
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/geometry/kdtree_kernel.cu(205): warning : variable "IfContinue" was declared but never referenced
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/geometry/kdtree_kernel.cu(205): warning : variable "IfContinue" was declared but never referenced
          
-         tmpxft_00000438_00000000-0_kdtree_kernel.cudafe1.gpu
-         tmpxft_00000438_00000000-5_kdtree_kernel.cudafe2.gpu
+         tmpxft_00003128_00000000-0_kdtree_kernel.cudafe1.gpu
+         tmpxft_00003128_00000000-5_kdtree_kernel.cudafe2.gpu
          kdtree_kernel.cu
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\utils.h(439): warning : default argument is not allowed
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\utils.h(439): warning : default argument is not allowed
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/geometry/kdtree_kernel.cu(205): warning : variable "IfContinue" was declared but never referenced
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/geometry/kdtree_kernel.cu(205): warning : variable "IfContinue" was declared but never referenced
          
-         tmpxft_00000438_00000000-0_kdtree_kernel.cudafe1.cpp
-         tmpxft_00000438_00000000-11_kdtree_kernel.ii
+         tmpxft_00003128_00000000-0_kdtree_kernel.cudafe1.cpp
+         tmpxft_00003128_00000000-11_kdtree_kernel.ii
        CudaBuild:
          Compiling CUDA source file path_tracer_kernel.cu...
-         cmd.exe /C "C:\Users\stone\AppData\Local\Temp\8d78a22b0bad4251889508146e410ee6.cmd"
-         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2010 -ccbin "c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin" -I"../glm" -I"../freeglut/include" -I"../glew/include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" -I"C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\share\inc" -I"C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include"  -G  --keep-dir "Debug" -maxrregcount=0  --machine 32 --compile  -g    -Xcompiler "/EHsc /nologo /Od /Zi /RTC1 /MD  " -o "Debug\path_tracer_kernel.cu.obj" "C:\project\gpu-pathtracing\GPUPathTracer\GPUPathTracer\path_tracer_kernel.cu"
+         cmd.exe /C "C:\Users\SYL\AppData\Local\Temp\dadea831013b491d84f99bbbafb127bc.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2010 -ccbin "D:\Program Files\Microsoft Visual Studio 10.0\VC\bin" -I"../glm" -I"../freeglut/include" -I"../glew/include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" -I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\share\inc" -I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include"  -G  --keep-dir "Debug" -maxrregcount=0  --machine 32 --compile  -g    -Xcompiler "/EHsc /nologo /Od /Zi /RTC1 /MD  " -o "Debug\path_tracer_kernel.cu.obj" "D:\Projection\gpu-pathtracing\GPUPathTracer\GPUPathTracer\path_tracer_kernel.cu"
          
-         C:\project\gpu-pathtracing\GPUPathTracer\GPUPathTracer>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2010 -ccbin "c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin" -I"../glm" -I"../freeglut/include" -I"../glew/include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" -I"C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\share\inc" -I"C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include"  -G  --keep-dir "Debug" -maxrregcount=0  --machine 32 --compile  -g    -Xcompiler "/EHsc /nologo /Od /Zi /RTC1 /MD  " -o "Debug\path_tracer_kernel.cu.obj" "C:\project\gpu-pathtracing\GPUPathTracer\GPUPathTracer\path_tracer_kernel.cu" 
+         D:\Projection\gpu-pathtracing\GPUPathTracer\GPUPathTracer>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2010 -ccbin "D:\Program Files\Microsoft Visual Studio 10.0\VC\bin" -I"../glm" -I"../freeglut/include" -I"../glew/include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" -I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\share\inc" -I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include"  -G  --keep-dir "Debug" -maxrregcount=0  --machine 32 --compile  -g    -Xcompiler "/EHsc /nologo /Od /Zi /RTC1 /MD  " -o "Debug\path_tracer_kernel.cu.obj" "D:\Projection\gpu-pathtracing\GPUPathTracer\GPUPathTracer\path_tracer_kernel.cu" 
          path_tracer_kernel.cu
-     1>C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc\cutil.h(781): warning C4005: 'CUDA_SAFE_CALL' : macro redefinition
-                 c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\cuda_safe_call.h(12) : see previous definition of 'CUDA_SAFE_CALL'
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry/utils.h(439): warning : default argument is not allowed
+     1>d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc\cutil.h(781): warning C4005: 'CUDA_SAFE_CALL' : macro redefinition
+                 d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\cuda_safe_call.h(12) : see previous definition of 'CUDA_SAFE_CALL'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry/utils.h(439): warning : default argument is not allowed
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(257): warning : calling a __host__ function from a __host__ __device__ function is not allowed
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(257): warning : calling a __host__ function from a __host__ __device__ function is not allowed
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(357): warning : variable "i" was declared but never referenced
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(357): warning : variable "i" was declared but never referenced
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(357): warning : variable "j" was declared but never referenced
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(357): warning : variable "j" was declared but never referenced
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(571): warning : missing return statement at end of non-void function "computeBackgroundColor"
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(571): warning : missing return statement at end of non-void function "computeBackgroundColor"
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(493): warning : variable "pixelColor" was declared but never referenced
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(493): warning : variable "pixelColor" was declared but never referenced
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(497): warning : variable "curImage" was declared but never referenced
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(497): warning : variable "curImage" was declared but never referenced
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(608): warning : variable "bestSphereIndex" was declared but never referenced
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(608): warning : variable "bestSphereIndex" was declared but never referenced
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(609): warning : variable "bestPolyIndex" was set but never used
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(609): warning : variable "bestPolyIndex" was set but never used
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(613): warning : variable "normal" was declared but never referenced
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(613): warning : variable "normal" was declared but never referenced
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(627): warning : variable "ob1" was declared but never referenced
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(627): warning : variable "ob1" was declared but never referenced
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(628): warning : variable "ob2" was declared but never referenced
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(628): warning : variable "ob2" was declared but never referenced
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(257): warning : calling a host function("operator *") from a __device__/__global__ function("positionAlongRay") is not allowed
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(257): warning : calling a host function("operator *") from a __device__/__global__ function("positionAlongRay") is not allowed
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(257): warning : calling a host function("operator *") from a __device__/__global__ function("positionAlongRay") is not allowed
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(257): warning : calling a host function("operator *") from a __device__/__global__ function("positionAlongRay") is not allowed
          
-         tmpxft_00001a3c_00000000-0_path_tracer_kernel.cudafe1.gpu
-         tmpxft_00001a3c_00000000-5_path_tracer_kernel.cudafe2.gpu
+         tmpxft_0000338c_00000000-0_path_tracer_kernel.cudafe1.gpu
+         tmpxft_0000338c_00000000-5_path_tracer_kernel.cudafe2.gpu
          path_tracer_kernel.cu
-     1>C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc\cutil.h(781): warning C4005: 'CUDA_SAFE_CALL' : macro redefinition
-                 c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\cuda_safe_call.h(12) : see previous definition of 'CUDA_SAFE_CALL'
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry/utils.h(439): warning : default argument is not allowed
+     1>d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc\cutil.h(781): warning C4005: 'CUDA_SAFE_CALL' : macro redefinition
+                 d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\cuda_safe_call.h(12) : see previous definition of 'CUDA_SAFE_CALL'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry/utils.h(439): warning : default argument is not allowed
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(357): warning : variable "i" was declared but never referenced
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(357): warning : variable "i" was declared but never referenced
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(357): warning : variable "j" was declared but never referenced
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(357): warning : variable "j" was declared but never referenced
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(571): warning : missing return statement at end of non-void function "computeBackgroundColor"
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(571): warning : missing return statement at end of non-void function "computeBackgroundColor"
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(493): warning : variable "pixelColor" was declared but never referenced
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(493): warning : variable "pixelColor" was declared but never referenced
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(497): warning : variable "curImage" was declared but never referenced
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(497): warning : variable "curImage" was declared but never referenced
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(608): warning : variable "bestSphereIndex" was declared but never referenced
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(608): warning : variable "bestSphereIndex" was declared but never referenced
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(609): warning : variable "bestPolyIndex" was set but never used
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(609): warning : variable "bestPolyIndex" was set but never used
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(613): warning : variable "normal" was declared but never referenced
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(613): warning : variable "normal" was declared but never referenced
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(627): warning : variable "ob1" was declared but never referenced
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(627): warning : variable "ob1" was declared but never referenced
          
-     1>C:/project/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(628): warning : variable "ob2" was declared but never referenced
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(628): warning : variable "ob2" was declared but never referenced
          
-         tmpxft_00001a3c_00000000-0_path_tracer_kernel.cudafe1.cpp
-     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include\thrust/random/detail/xor_combine_engine.inl(86): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-         tmpxft_00001a3c_00000000-11_path_tracer_kernel.ii
-     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include\thrust/random/detail/xor_combine_engine.inl(196): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+         tmpxft_0000338c_00000000-0_path_tracer_kernel.cudafe1.cpp
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include\thrust/random/detail/xor_combine_engine_max.h(305): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+         tmpxft_0000338c_00000000-11_path_tracer_kernel.ii
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include\thrust/detail/pair.inl(61): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
        ClCompile:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../glm /I../freeglut/include /I../glew/include /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" /I"C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\share\inc" /I"C:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt geometry\KDTree.cpp hdrloader.cpp display.cpp image.cpp material.cpp objcore\obj.cpp objcore\objloader.cpp path_tracer.cpp
+         D:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../glm /I../freeglut/include /I../glew/include /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" /I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\share\inc" /I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt basic_math.cpp geometry\KDTree.cpp hdrloader.cpp interactive_camera.cpp color.cpp display.cpp image.cpp material.cpp objcore\obj.cpp objcore\objloader.cpp path_tracer.cpp
          path_tracer.cpp
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\image.h(9): warning C4099: 'Image' : type name first seen using 'struct' now seen using 'class'
-                 c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\path_tracer.h(9) : see declaration of 'Image'
-     1>c:\programdata\nvidia corporation\nvidia gpu computing sdk 4.2\c\common\inc\cutil.h(781): warning C4005: 'CUDA_SAFE_CALL' : macro redefinition
-                 c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\cuda_safe_call.h(12) : see previous definition of 'CUDA_SAFE_CALL'
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\ray.h(5): warning C4099: 'Ray' : type name first seen using 'struct' now seen using 'class'
-                 c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\path_tracer.h(11) : see declaration of 'Ray'
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\ray.h(11): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\ray.h(16): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_common.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_common.inl : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_integer.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\path_tracer.cpp(36): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\path_tracer.cpp(36): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\path_tracer.cpp(116): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\path_tracer.cpp(116): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\image.h(9): warning C4099: 'Image' : type name first seen using 'struct' now seen using 'class'
+                 d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\path_tracer.h(9) : see declaration of 'Image'
+     1>d:\programdata\nvidia corporation\nvidia gpu computing sdk 4.2\c\common\inc\cutil.h(781): warning C4005: 'CUDA_SAFE_CALL' : macro redefinition
+                 d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\cuda_safe_call.h(12) : see previous definition of 'CUDA_SAFE_CALL'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\ray.h(5): warning C4099: 'Ray' : type name first seen using 'struct' now seen using 'class'
+                 d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\path_tracer.h(11) : see declaration of 'Ray'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\ray.h(11): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\ray.h(16): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_common.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_common.inl : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_integer.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\path_tracer.cpp(36): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\path_tracer.cpp(36): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\path_tracer.cpp(117): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\path_tracer.cpp(117): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
          objloader.cpp
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_common.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_common.inl : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_integer.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\objloader.cpp(101): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\objloader.cpp(105): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\objloader.cpp(120): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\objloader.cpp(122): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\objloader.cpp(124): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\objloader.cpp(136): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_common.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_common.inl : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_integer.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\objloader.cpp(107): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\objloader.cpp(111): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\objloader.cpp(126): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\objloader.cpp(128): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\objloader.cpp(130): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\objloader.cpp(142): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\objloader.cpp(154): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\objloader.cpp(156): warning C4018: '<' : signed/unsigned mismatch
          obj.cpp
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_common.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_common.inl : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_integer.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(38): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(68): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(76): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(111): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(114): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(117): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(158): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(195): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(245): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(252): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(259): warning C4018: '<' : signed/unsigned mismatch
-         display.cpp
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\image.h(9): warning C4099: 'Image' : type name first seen using 'struct' now seen using 'class'
-                 c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\path_tracer.h(9) : see declaration of 'Image'
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_common.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_common.inl : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_integer.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(84): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(84): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(197): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(233): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(233): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(234): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(239): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(239): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(240): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(245): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(245): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(246): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(296): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(297): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(301): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(301): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(306): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-         hdrloader.cpp
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\hdrloader.cpp(35): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\hdrloader.cpp(68): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(325) : see declaration of 'sscanf'
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\hdrloader.cpp(102): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-         KDTree.cpp
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\ray.h(11): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\ray.h(16): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\kdtree.cpp(29): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\kdtree.cpp(542): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\kdtree.cpp(661): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\project\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\kdtree.cpp(666): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-         Generating Code...
-         Compiling...
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_common.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_common.inl : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_integer.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(39): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(69): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(77): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(112): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(115): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(118): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(159): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(196): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(246): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(253): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\objcore\obj.cpp(260): warning C4018: '<' : signed/unsigned mismatch
          material.cpp
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
          image.cpp
+         display.cpp
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\image.h(9): warning C4099: 'Image' : type name first seen using 'struct' now seen using 'class'
+                 d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\path_tracer.h(9) : see declaration of 'Image'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_common.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_common.inl : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_integer.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(84): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(84): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(197): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(233): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(233): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(234): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(239): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(239): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(240): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(245): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(245): warning C4305: 'argument' : truncation from 'double' to 'GLfloat'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(246): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\microsoft visual studio 10.0\vc\include\stdio.h(371) : see declaration of 'sprintf'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(296): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(297): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(301): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(301): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\display.cpp(306): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         color.cpp
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\color.cpp(44): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\color.cpp(45): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\color.cpp(58): warning C4244: '=' : conversion from 'float' to 'unsigned char', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\color.cpp(59): warning C4244: '=' : conversion from 'float' to 'unsigned char', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\color.cpp(60): warning C4244: '=' : conversion from 'float' to 'unsigned char', possible loss of data
+         interactive_camera.cpp
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_common.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_common.inl : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_integer.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\interactive_camera.cpp(19): warning C4305: '=' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\interactive_camera.cpp(21): warning C4305: '=' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\interactive_camera.cpp(58): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\interactive_camera.cpp(76): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\interactive_camera.cpp(102): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\interactive_camera.cpp(107): warning C4305: 'initializing' : truncation from 'double' to 'float'
+         hdrloader.cpp
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\hdrloader.cpp(35): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\hdrloader.cpp(68): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\program files\microsoft visual studio 10.0\vc\include\stdio.h(325) : see declaration of 'sscanf'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\hdrloader.cpp(102): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         KDTree.cpp
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\ray.h(11): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\ray.h(16): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\kdtree.cpp(29): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\kdtree.cpp(542): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\kdtree.cpp(661): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\kdtree.cpp(666): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+         basic_math.cpp
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\basic_math.cpp(6): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\basic_math.cpp(7): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\basic_math.cpp(8): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\basic_math.cpp(9): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\basic_math.cpp(10): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\basic_math.cpp(11): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\basic_math.cpp(12): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\basic_math.cpp(13): warning C4305: 'initializing' : truncation from 'double' to 'const float'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\basic_math.cpp(29): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\basic_math.cpp(34): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\basic_math.cpp(43): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\basic_math.cpp(51): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
          Generating Code...
        ManifestResourceCompile:
-         All outputs are up-to-date.
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\GPUPathTracer.exe.embed.manifest.res" Debug\GPUPathTracer_manifest.rc 
        Link:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\project\gpu-pathtracing\GPUPathTracer\Debug\GPUPathTracer.exe" /INCREMENTAL /NOLOGO /LIBPATH:../freeglut/lib /LIBPATH:../glew/lib /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\lib\Win32" /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\lib\Win32" freeglut.lib glew32.lib cudart.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\GPUPathTracer.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\project\gpu-pathtracing\GPUPathTracer\Debug\GPUPathTracer.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\project\gpu-pathtracing\GPUPathTracer\Debug\GPUPathTracer.lib" /MACHINE:X86 Debug\kdtree_kernel.cu.obj
+         D:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Projection\gpu-pathtracing\GPUPathTracer\Debug\GPUPathTracer.exe" /INCREMENTAL /NOLOGO /LIBPATH:../freeglut/lib /LIBPATH:../glew/lib /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\lib\Win32" /LIBPATH:"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\lib\Win32" freeglut.lib glew32.lib cudart.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\GPUPathTracer.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\Projection\gpu-pathtracing\GPUPathTracer\Debug\GPUPathTracer.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Projection\gpu-pathtracing\GPUPathTracer\Debug\GPUPathTracer.lib" /MACHINE:X86 Debug\kdtree_kernel.cu.obj
          Debug\path_tracer_kernel.cu.obj
          Debug\GPUPathTracer.exe.embed.manifest.res
          Debug\basic_math.obj
@@ -265,9 +311,9 @@
      1>objloader.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in kdtree_kernel.cu.obj
      1>path_tracer.obj : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in kdtree_kernel.cu.obj
      1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-     1>C:\project\gpu-pathtracing\GPUPathTracer\Debug\GPUPathTracer.exe : fatal error LNK1319: 10 mismatches detected
-     1>Done Building Project "C:\project\gpu-pathtracing\GPUPathTracer\GPUPathTracer\GPUPathTracer.vcxproj" (build target(s)) -- FAILED.
+     1>D:\Projection\gpu-pathtracing\GPUPathTracer\Debug\GPUPathTracer.exe : fatal error LNK1319: 10 mismatches detected
+     1>Done Building Project "D:\Projection\gpu-pathtracing\GPUPathTracer\GPUPathTracer\GPUPathTracer.vcxproj" (build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:01:16.36
+Time Elapsed 00:01:10.93

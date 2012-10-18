@@ -55,7 +55,7 @@ PathTracer::~PathTracer() {
 
 void::PathTracer::prepMesh(){
 	obj *m = new obj();
-	objLoader meshload("../box.obj", m);
+	objLoader meshload("../horse_floor_25054.obj", m);
 
 /*	polys = new Poly[m->getFaces()->size()];
 
