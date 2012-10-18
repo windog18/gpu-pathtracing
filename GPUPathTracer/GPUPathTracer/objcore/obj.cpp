@@ -26,6 +26,7 @@ obj::obj(){
 	maxminSet = false;
 	xmax=0; xmin=0; ymax=0; ymin=0; zmax=0; zmin=0; 
 	materialList.clear();
+	materialList.push_back(Material());
 	materialNameToID.clear();
 }
 
@@ -355,11 +356,15 @@ vector<int> obj::getMaterialIdx(){
 }
 
 void obj::loadMaterial(std::string materialFile){
-	materialList.clear();
-		ifstream fin;
+	ifstream fin;
 	fin.open(materialFile.c_str());
-
-	if(!fin) return ;
+	if(!fin) {
+		cout<<"can't find the materialFile: "<<materialFile<<endl;
+		cout<<"will use defualt material for all object"<<endl;
+		return ;
+	}
+	materialList.clear();
+	materialList.push_back(Material());
 	string header;
 	int index = 1;
 	while(fin>>header){
@@ -382,13 +387,20 @@ void obj::loadMaterial(std::string materialFile){
 					fin>>newMaterial.specularColor.x>>newMaterial.specularColor.y>>newMaterial.specularColor.z;
 				}else if(tempBuffer == "translucent"){
 					newMaterial.hasTransmission = true;
+				}else if(tempBuffer == "absorption"){
+					fin>>newMaterial.medium.absorptionAndScatteringProperties.absorptionCoefficient.x
+					   >>newMaterial.medium.absorptionAndScatteringProperties.absorptionCoefficient.y
+					   >>newMaterial.medium.absorptionAndScatteringProperties.absorptionCoefficient.z;
+				}else if(tempBuffer == "reduce"){
+					fin>>newMaterial.medium.absorptionAndScatteringProperties.reducedScatteringCoefficient;
+				}else if(tempBuffer == "refractive"){
+					fin>>newMaterial.medium.refractiveIndex;
 				}else if(tempBuffer == "newmtl"){
 					for(int i = tempBuffer.size() - 1 ;i >= 0;i--){
 						fin.putback(tempBuffer[i]);
 					}
 					break;
 				}
-				
 			}
 			materialList.push_back(newMaterial);
 	/*		cout<<"header: "<<newMaterial.materialName<<endl;

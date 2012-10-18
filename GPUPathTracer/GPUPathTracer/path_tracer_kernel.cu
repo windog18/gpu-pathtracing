@@ -578,7 +578,7 @@ Color computeTransmission(Color absorptionCoefficient, float distance) {
 	return transmitted;
 }
 
-__global__ void traceRayKernel(Triangle *m_triangles,Material *device_materialList,int numActivePixels, int* activePixels, Ray *rays,
+__global__ void traceRayKernel(Triangle *m_triangles,int numActivePixels, int* activePixels,Material *materialList , Ray *rays,
 	                           int *isectID,float *alpha,int rayDepth, AbsorptionAndScatteringProperties* absorptionAndScattering, 
 							   float3* notAbsorbedColors, float3* accumulatedColors, unsigned long seedOrPass) {
 
@@ -719,16 +719,16 @@ __global__ void traceRayKernel(Triangle *m_triangles,Material *device_materialLi
 		} else if (bestIsSphere) {
 		//	bestMaterial = spheres[bestSphereIndex].material;
 		} else if(bestIsPoly){
-			Material marble;
-			SET_DEFAULT_MATERIAL_PROPERTIES(marble);
-			marble.specularColor = make_float3(0.81, 0.81, 0.69);
+			 bestMaterial = materialList[m_triangles[intersectID].index];
+			//SET_DEFAULT_MATERIAL_PROPERTIES(marble);
+		/*	marble.specularColor = make_float3(0.81, 0.81, 0.69);
 			marble.hasTransmission = true;
 			marble.diffuseColor = make_float3(0.81, 0.81, 0.69);
 			marble.medium.refractiveIndex = 1.3;
 			marble.medium.absorptionAndScatteringProperties.absorptionCoefficient = make_float3(0.0014 ,0.0025 ,0.0142)*10;
 			marble.medium.absorptionAndScatteringProperties.reducedScatteringCoefficient = 1.90 *10;
-			marble.medium.absorptionAndScatteringProperties.g = 0.01;
-			bestMaterial = marble;
+			marble.medium.absorptionAndScatteringProperties.g = 0.01;*/
+		//	bestMaterial = marble;
 		//	bestMaterial = polys[bestPolyIndex].material;
 		}
 
@@ -914,7 +914,7 @@ void launchKernel(int numPixels, Color* pixels,Material *device_materialList,int
 		int newBlocksPerGrid = (numActivePixels + threadsPerBlock - 1) / threadsPerBlock; // Duplicate code.
 		KD_TREE::active_ray_bunch_traverse(kdtree->TreeNode_device,kdtree->TriangleIndexUseForCuda_device,
 			                               kdtree->treeTriangle_device,rays,activePixels,hits,alpha,x1,x2);
-		 traceRayKernel<<<newBlocksPerGrid, threadsPerBlock>>>(kdtree->treeTriangle_device, device_materialList, numActivePixels, activePixels.pointer(), 
+		 traceRayKernel<<<newBlocksPerGrid, threadsPerBlock>>>(kdtree->treeTriangle_device, numActivePixels, activePixels.pointer(),device_materialList, 
 			 rays.pointer(), hits.pointer(), alpha.pointer(), rayDepth, absorptionAndScattering, notAbsorbedColors, accumulatedColors, counter);
 		 cudaThreadSynchronize();
 
@@ -929,7 +929,6 @@ void launchKernel(int numPixels, Color* pixels,Material *device_materialList,int
 		thrust::device_ptr<int> newEnd = thrust::remove_if(devicePointer, devicePointer + numActivePixels, isNegative());
 		numActivePixels = newEnd.get() - activePixels.pointer();
 		activePixels.resize(numActivePixels);
-		std::cout << numActivePixels << std::endl;
 		if(numActivePixels == 0)
 		   break;
 	}
