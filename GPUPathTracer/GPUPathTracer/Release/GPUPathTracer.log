@@ -1,11 +1,11 @@
-﻿Build started 2012/10/18 23:53:58.
+﻿Build started 2012/10/23 21:34:51.
      1>Project "D:\Projection\gpu-pathtracing\GPUPathTracer\GPUPathTracer\GPUPathTracer.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Release\GPUPathTracer.unsuccessfulbuild" because "AlwaysCreate" was specified.
        AddCudaCompileDeps:
        Skipping target "AddCudaCompileDeps" because all output files are up-to-date with respect to the input files.
        AddCudaCompileDeps:
-       Skipping target "AddCudaCompileDeps" because all output files are up-to-date with respect to the input files.
+         D:\Program Files\Microsoft Visual Studio 10.0\VC\bin\cl.exe /E /nologo /showIncludes /TP /D__CUDACC__ /I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\share\inc" /I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\bin" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" /I. /FIcuda_runtime.h /c D:\Projection\gpu-pathtracing\GPUPathTracer\GPUPathTracer\path_tracer_kernel.cu 
        AddCudaCompilePropsDeps:
        Skipping target "AddCudaCompilePropsDeps" because all output files are up-to-date with respect to the input files.
        AddCudaCompilePropsDeps:
@@ -13,28 +13,71 @@
        CudaBuild:
        Skipping target "CudaBuild" because all output files are up-to-date with respect to the input files.
        CudaBuild:
-       Skipping target "CudaBuild" because all output files are up-to-date with respect to the input files.
-       ClCompile:
-         D:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../glm /I../freeglut/include /I../glew/include /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" /I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include" /I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\share\inc" /I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc" /Zi /nologo /W3 /WX- /Od /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt path_tracer.cpp
-         path_tracer.cpp
-     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\material.h(17): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\image.h(9): warning C4099: 'Image' : type name first seen using 'struct' now seen using 'class'
-                 d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\path_tracer.h(9) : see declaration of 'Image'
+         Compiling CUDA source file path_tracer_kernel.cu...
+         cmd.exe /C "C:\Users\SYL\AppData\Local\Temp\10bf34a2599d456f9b558078a21e31a3.cmd"
+         "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2010 -ccbin "D:\Program Files\Microsoft Visual Studio 10.0\VC\bin" -I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\share\inc" -I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include"    --keep-dir "Release" -maxrregcount=0  --machine 32 --compile      -Xcompiler "/EHsc /nologo /Od /Zi  /MD  " -o "Release\path_tracer_kernel.cu.obj" "D:\Projection\gpu-pathtracing\GPUPathTracer\GPUPathTracer\path_tracer_kernel.cu"
+         
+         D:\Projection\gpu-pathtracing\GPUPathTracer\GPUPathTracer>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\bin\nvcc.exe" -gencode=arch=compute_20,code=\"sm_20,compute_20\" --use-local-env --cl-version 2010 -ccbin "D:\Program Files\Microsoft Visual Studio 10.0\VC\bin" -I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\share\inc" -I"d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include"    --keep-dir "Release" -maxrregcount=0  --machine 32 --compile      -Xcompiler "/EHsc /nologo /Od /Zi  /MD  " -o "Release\path_tracer_kernel.cu.obj" "D:\Projection\gpu-pathtracing\GPUPathTracer\GPUPathTracer\path_tracer_kernel.cu" 
+         path_tracer_kernel.cu
      1>d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc\cutil.h(781): warning C4005: 'CUDA_SAFE_CALL' : macro redefinition
                  d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\cuda_safe_call.h(12) : see previous definition of 'CUDA_SAFE_CALL'
-     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\ray.h(5): warning C4099: 'Ray' : type name first seen using 'struct' now seen using 'class'
-                 d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\path_tracer.h(11) : see declaration of 'Ray'
-     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\ray.h(11): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry\ray.h(16): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\./core/func_common.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\core\func_common.inl : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\glm\./core/func_integer.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-     1>path_tracer.cpp(36): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>path_tracer.cpp(36): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>path_tracer.cpp(117): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>path_tracer.cpp(117): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry/utils.h(439): warning : default argument is not allowed
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(257): warning : calling a __host__ function from a __host__ __device__ function is not allowed
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(357): warning : variable "i" was declared but never referenced
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(357): warning : variable "j" was declared but never referenced
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(571): warning : missing return statement at end of non-void function "computeBackgroundColor"
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(493): warning : variable "pixelColor" was declared but never referenced
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(497): warning : variable "curImage" was declared but never referenced
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(608): warning : variable "bestSphereIndex" was declared but never referenced
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(609): warning : variable "bestPolyIndex" was set but never used
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(613): warning : variable "normal" was declared but never referenced
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(627): warning : variable "ob1" was declared but never referenced
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(628): warning : variable "ob2" was declared but never referenced
+         
+         tmpxft_0000112c_00000000-0_path_tracer_kernel.cudafe1.gpu
+         tmpxft_0000112c_00000000-5_path_tracer_kernel.cudafe2.gpu
+         path_tracer_kernel.cu
+     1>d:\ProgramData\NVIDIA Corporation\NVIDIA GPU Computing SDK 4.2\C\common\inc\cutil.h(781): warning C4005: 'CUDA_SAFE_CALL' : macro redefinition
+                 d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\cuda_safe_call.h(12) : see previous definition of 'CUDA_SAFE_CALL'
+     1>d:\projection\gpu-pathtracing\gpupathtracer\gpupathtracer\geometry/utils.h(439): warning : default argument is not allowed
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(357): warning : variable "i" was declared but never referenced
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(357): warning : variable "j" was declared but never referenced
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(571): warning : missing return statement at end of non-void function "computeBackgroundColor"
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(493): warning : variable "pixelColor" was declared but never referenced
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(497): warning : variable "curImage" was declared but never referenced
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(608): warning : variable "bestSphereIndex" was declared but never referenced
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(609): warning : variable "bestPolyIndex" was set but never used
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(613): warning : variable "normal" was declared but never referenced
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(627): warning : variable "ob1" was declared but never referenced
+         
+     1>D:/Projection/gpu-pathtracing/GPUPathTracer/GPUPathTracer/path_tracer_kernel.cu(628): warning : variable "ob2" was declared but never referenced
+         
+         tmpxft_0000112c_00000000-0_path_tracer_kernel.cudafe1.cpp
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include\thrust/random/detail/xor_combine_engine_max.h(305): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+         tmpxft_0000112c_00000000-11_path_tracer_kernel.ii
+     1>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v4.2\include\thrust/detail/pair.inl(61): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+       ClCompile:
+         All outputs are up-to-date.
        ManifestResourceCompile:
          All outputs are up-to-date.
        Link:
@@ -75,4 +118,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:07.04
+Time Elapsed 00:00:36.88
