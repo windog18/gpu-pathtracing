@@ -126,7 +126,7 @@ extern "C" void SetTexture(cudaArray *cuArray,int nCount)
 			 pPixel[3]=(BYTE)255;
 
 		}
-	cutilSafeCall(cudaMallocArray(&tcuArray,&chDesc,w,h));
+	CUDA_SAFE_CALL(cudaMallocArray(&tcuArray,&chDesc,w,h));
 	cutilSafeCall(cudaMemcpyToArray(tcuArray,0,0,temp,size,cudaMemcpyHostToDevice));*/
 //cudaMemcpyToArray(tcuArray,0,0,cuArray,w*h*sizeof(unsigned long),cudaMemcpyDeviceToDevice);
 //	cudaGetChannelDesc(&p,cuArray);

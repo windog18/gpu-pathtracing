@@ -1,7 +1,7 @@
 #pragma once
 #include"assert.h"
 #include <string>
-#include "cutil_inline.h"
+#include "cuda_runtime.h"
 #define Colour Vec3
 /*=====================================================================
 ÈıÎ¬ÏòÁ¿

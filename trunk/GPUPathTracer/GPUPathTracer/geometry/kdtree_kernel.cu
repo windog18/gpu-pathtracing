@@ -271,7 +271,7 @@ extern "C" void active_ray_bunch_traverse(Knode *TreeNode, int *TriangleIndexUse
 	                                               activePixels.pointer(),activePixels.size(),hitID.pointer(),
 												   lamda.pointer(),U.pointer(),V.pointer());
    cudaThreadSynchronize();
-   CUT_CHECK_ERROR("active_ray_bunch_travese_kernel fail!");
+ //  CUT_CHECK_ERROR("active_ray_bunch_travese_kernel fail!");
 }
 extern "C" void active_ray_bunch_traverse_hits(Knode *TreeNode, int *TriangleIndexUseForCuda, Triangle *treeTriangle, 
 												DevVector<Ray> &ray,DevVector<int> &activePixels,

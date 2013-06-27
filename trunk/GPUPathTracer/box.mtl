@@ -1,5 +1,5 @@
 newmtl initialShadingGroup
-translucent
+diffuse
 profile reflectance_green.dat transmittance_green.dat
 #Kd 0.0094 0.2217 0.1724
 Kd 0.81 0.31 0.69
