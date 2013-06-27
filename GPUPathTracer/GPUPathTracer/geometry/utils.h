@@ -13,8 +13,8 @@
 #include <iostream>
 #include <string>
 #include <vector_types.h>
-#include <cutil_math.h>
-#include <cutil_inline.h>
+#include <cuda_runtime.h>
+#include "cutil_math.h"
 
 // defined outside of namespace, __globla__ functions don't scope
 // correctly to global namespaces
